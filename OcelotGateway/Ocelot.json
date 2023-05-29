@@ -1,0 +1,31 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/cart",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5023
+        }
+      ],
+      "UpstreamPathTemplate": "/api/cart",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/product",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5114
+        }
+      ],
+      "UpstreamPathTemplate": "/api/product",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7219"
+  }
+}

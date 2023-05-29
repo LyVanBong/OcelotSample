@@ -3,7 +3,7 @@
 namespace WebAPI.Cart.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("cart")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
