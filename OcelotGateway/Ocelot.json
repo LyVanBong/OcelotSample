@@ -22,6 +22,41 @@
         }
       ],
       "UpstreamPathTemplate": "/api/product",
+      "UpstreamHttpMethod": [ "Get" ],
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "period": "5s",
+        "PeriodTimespan": 1,
+        "Limit": 1
+      }
+    },
+    { // private service
+      "DownstreamPathTemplate": "/api/private/first",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5190
+        }
+      ],
+      "UpstreamPathTemplate": "/api/private",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopos": []
+      }
+    },
+    { // Authen service
+      "DownstreamPathTemplate": "/api/authen",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5238
+        }
+      ],
+      "UpstreamPathTemplate": "/api/authen-a",
       "UpstreamHttpMethod": [ "Get" ]
     }
   ],
